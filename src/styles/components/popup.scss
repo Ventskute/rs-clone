@@ -1,0 +1,90 @@
+.popup {
+    background: linear-gradient(black, rgba(10, 10, 10, 0.55), black);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    backdrop-filter: blur(10px);
+
+    &.fade {
+        opacity: 0;
+    }
+
+    &--text {
+        position: absolute;
+        top: 275px;
+        font-size: 48px;
+        color: $color-text-light;
+    }
+
+    &--content {
+        text-align: center;
+        color: #fff;
+        display: flex;
+    }
+
+    &--card {
+        position: relative;
+        height: 120px;
+        width: 195px;
+
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: space-around;
+
+        border: none;
+        margin: 5px;
+        padding: 10px 0;
+        background-color: transparent;
+
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $color-text-light;
+        cursor: $cursor-pointer;
+        transition: color 0.15s ease;
+
+        img {
+            pointer-events: none;
+            transition: filter 0.15s ease;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+
+            background-image: url('./assets/UI/papirus.png');
+            background-position: -100px -20px;
+
+            filter: saturate(0.85);
+            opacity: 0;
+            transition: opacity 0.15s ease;
+        }
+
+        &:hover {
+            color: $color-text-black;
+
+            &:before {
+                opacity: 1;
+            }
+
+            img {
+                filter: invert(1);
+            }
+        }
+    }
+}

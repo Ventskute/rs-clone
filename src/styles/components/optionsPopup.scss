@@ -1,0 +1,51 @@
+.options {
+  input[type='range'] {
+    width: 80%;
+  }
+  opacity: 0;
+
+  @include animation('unfade 0.15s linear forwards');
+
+  &.fade {
+    @include animation('fade 0.15s linear forwards');
+  }
+}
+
+.options--content {
+  img {
+    cursor: $cursor-pointer;
+    filter: invert(1);
+
+    &:hover {
+      filter: contrast(0.5);
+    }
+  }
+
+  .options--item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    p {
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+
+  .disabled {
+    &:after {
+      content: '';
+      position: absolute;
+      top: -7px;
+      left: 15px;
+      width: 4px;
+      height: 50px;
+      transform: rotate(45deg);
+      background-color: red;
+      user-select: none;
+      pointer-events: none;
+    }
+  }
+}
+

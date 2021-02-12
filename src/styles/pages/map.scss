@@ -1,0 +1,50 @@
+.map {
+  position: relative;
+  height: calc(100vw * 9 / 16);
+  width: 100vw;
+  max-height: 100vh;
+  max-width: calc(100vh * 16 / 9);
+  background-size: cover;
+
+  .marker {
+    position: absolute;
+    height: 40px;
+    margin-left: 10px;
+    margin-top: 20px;
+
+    cursor: $cursor-pointer;
+    @include animation('jump 2s infinite');
+    animation-play-state: paused;
+
+    z-index: 0;
+
+    &.disabled {
+      pointer-events: none;
+      filter: grayscale(1);
+    }
+
+    &.current {
+      height: 60px;
+      margin: 0;
+      animation-play-state: running;
+    }
+  }
+}
+
+@include keyframes(jump) {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(-20px) scale(1.2);
+  }
+  50% {
+    transform: translateY(0px) scale(1);
+  }
+  75% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

@@ -1,0 +1,45 @@
+.disclaimer {
+  transition: opacity 0.5s ease;
+
+  .modal--content {
+    width: 800px;
+  }
+
+  h3 {
+    margin-top: 20px;
+  }
+
+  p {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+
+  a  {
+    margin-left: 10px;
+  }
+
+  .link--image {
+    height: 18px;
+    cursor: $cursor-pointer;
+    transition: none;
+
+    &:hover {
+      filter: invert(1);
+    }
+  }
+
+  .images-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 25px;
+  }
+
+  .logo {
+    height: 75px;
+  }
+
+  .button {
+    margin-top: 35px;
+  }
+}

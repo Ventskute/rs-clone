@@ -1,0 +1,38 @@
+.timer {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: flex;
+    padding: 7px 7px 7px 2px;
+    border-radius: 5px;
+    backdrop-filter: blur(10px);
+    border: 5px solid white;
+
+    &--count_divider {
+        color: $color-text-light;
+        margin-left: 5px;
+        font-size: 24px;
+        font-weight: 500;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &--count {
+        display: inline-block;
+        height: 65px;
+        width: 35px;
+        margin-left: 5px;
+
+        background: linear-gradient(to top, #ffffff 45%, #999 1%, #efefef 47%);
+        border-radius: 5px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 42px;
+        font-weight: 500;
+    }
+}

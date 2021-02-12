@@ -1,0 +1,81 @@
+$color-bg-main: #ffd9a8;
+$color-bg-menu: rgba(20, 20, 20, 0.65);
+$color-bg-body: #000000;
+$color-dark-main: rgba(51, 51, 51, 0.5);
+$color-text-dark: #333333;
+$color-text-black: #000000;
+$color-text-light: #ffffff;
+$color-text-greyed: #dfdfdf;
+$color-bg-popup: rgba(255,238,231, 0.2);
+$color-border-popup: #fff1e7;
+$color-focus: #2e72ff;
+$color-button: #f6da99;
+$color-accept: greenyellow;
+$color-decline: rgb(251, 63, 63);
+$shadow-default: 3px 3px 5px $color-dark-main;
+
+$cursor-default: url('./assets/UI/LOL_cursor2.cur'), auto;
+$cursor-pointer: url('./assets/UI/LOL_cursor3.cur'), pointer;
+
+@mixin res_320to768() {
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin res_768to1024 {
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin res_1024plus() {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+@import './styles/base.scss';
+
+// Pages styles
+@import './styles/pages/menu.scss';
+@import './styles/pages/map.scss';
+@import './styles/pages/final.scss';
+
+// Components styles
+@import './styles/components/table.scss';
+@import './styles/components/timer.scss';
+@import './styles/components/optionsPopup.scss';
+@import './styles/components/popup.scss';
+@import './styles/components/loader.scss';
+@import './styles/components/modal.scss';
+@import './styles/components/button.scss';
+@import './styles/components/mode.scss';
+@import './styles/components/dialog.scss';
+@import './styles/components/disclaimer.scss';

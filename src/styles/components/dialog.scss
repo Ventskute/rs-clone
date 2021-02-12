@@ -1,0 +1,68 @@
+.dialog {
+  &-wrapper {
+    height: 400px;
+    width: 100%;
+
+    position: absolute;
+    bottom: 0;
+
+    background-image: url('./assets/UI/papirus.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    z-index: 2;
+  }
+
+  &-blur {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+  }
+
+  &-avatar {
+    position: absolute;
+    width: fit-content;
+    height: 550px;
+    max-width: 530px;
+    top: -150px;
+    left: 100px;
+    overflow: hidden;
+    pointer-events: none;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &-speech {
+    padding: 50px 70px 50px 650px;
+    font-size: 2.5vh;
+
+    &--text {
+      margin-top: 20px;
+    }
+
+    &--button {
+      position: absolute;
+      right: 150px;
+      bottom: 50px;
+      padding: 22px 50px;
+      font-size: 22px;
+      font-weight: 500;
+      background-image: url('./assets/UI/button.png');
+      background-size: 100% 100%;
+      background-color: $color-button;
+      cursor: $cursor-pointer;
+      transition: 0.15s ease;
+      border: none;
+
+      &:hover {
+        filter: contrast(1.25);
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+[[redirects]]
+  from = "/map"
+  to = "/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/level"
+  to = "/"
+  status = 200
+  force = true

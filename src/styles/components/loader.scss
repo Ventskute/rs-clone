@@ -1,0 +1,81 @@
+.loader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  background: black;
+  z-index: 99;
+  color: $color-text-light;
+
+  font-size: 20px;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @include animation('bottomToTop 2s ease-in-out forwards');
+
+  &.fade {
+    @include animation('fade 0.15s linear forwards');
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 110px;
+    z-index: 100;
+    background-color: black;
+  }
+
+  &:before {
+    top: 0;
+  }
+
+  &:after {
+    bottom: 0;
+  }
+
+  &--quote {
+    z-index: 101;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 40px;
+  }
+
+  &--spinner {
+    position: absolute;
+    bottom: 10px;
+    right: 45px;
+    z-index: 101;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &--image {
+    transform-origin: center;
+    width: 60px;
+    @include animation('spin 1.5s linear infinite');
+  }
+}
+
+@include keyframes(spin) {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@include keyframes(bottomToTop) {
+  0% {
+    background-position-y: 100px;
+  }
+  100% {
+    background-position-y: -100px;
+  }
+}
